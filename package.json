@@ -20,5 +20,9 @@
     "myfitnesspal",
     "AI meal planner"
   ],
-  "homepage": "https://chat.openai.com/g/g-e8BEXHZXb-macromate"
+  "homepage": "https://chat.openai.com/g/g-e8BEXHZXb-macromate",
+  "aiPlugin": {
+    "name": "MacroMate Nutrition Tracker",
+    "description_for_model": "MacroMate facilitates seamless integration with the MyFitnessPal API, enabling users to track and plan meals directly through ChatGPT interactions. It specializes in handling user queries about nutritional information and meal planning, relaying requests to MyFitnessPal for data retrieval and response formulation. The plugin is designed to process and interpret dietary preferences and restrictions, offering personalized meal suggestions and macro calculations. Its primary role is to act as an intermediary between ChatGPT and MyFitnessPal, ensuring accurate and user-specific nutritional advice in a supportive and informative manner."
+  }
 }
