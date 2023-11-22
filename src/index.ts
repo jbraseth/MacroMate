@@ -13,6 +13,18 @@ const router = OpenAPIRouter({
   }
 });
 
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Content-Type': 'text/plain'
+};
+
+const preflightHeaders = {
+  ...headers,
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+};
+
+
 router.get('/.well-known/ai-plugin.json', (request: Request) => {
   const host = request.headers.get('host');
   const pluginManifest = defineAIPluginManifest({
@@ -45,44 +57,51 @@ router.get('/.well-known/ai-plugin.json', (request: Request) => {
   });
 });
 
-
 router.get('/mfp-auth', async ({ query }) => {
   const authorizationCode = query.code;
 
   try {
-    // Exchange the authorization code for an access token
-    const tokenResponse = await fetch('https://api.myfitnesspal.com/oauth2/token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        grant_type: 'authorization_code',
-        code: authorizationCode,
-        redirect_uri: 'https://www.yourapp.com/mfp-auth',
-        client_id: 'YOUR_CLIENT_ID', // Replace with your actual client ID
-        client_secret: 'YOUR_CLIENT_SECRET' // Replace with your actual client secret
-      })
-    });
+    // Placeholder for the OAuth implementation
+    // Throw an error indicating that OAuth implementation is pending MyFitnessPal API credentials
+    throw new Error("OAuth Implementation Pending: Awaiting client credentials (client_id and client_secret) from MyFitnessPal to enable the OAuth exchange.");
 
-    const tokenData = await tokenResponse.json();
+    // #region OAuth token exchange logic to be implemented after receiving credentials...
 
-    if (!tokenResponse.ok) {
-      throw new Error(tokenData.error_description || 'Error obtaining access token');
-    }
+    // const tokenResponse = await fetch('https://api.myfitnesspal.com/oauth2/token', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/x-www-form-urlencoded',
+    //   },
+    //   body: new URLSearchParams({
+    //     grant_type: 'authorization_code',
+    //     code: authorizationCode,
+    //     redirect_uri: 'https://www.yourapp.com/mfp-auth',
+    //     client_id: 'YOUR_CLIENT_ID', // Replace with your actual client ID
+    //     client_secret: 'YOUR_CLIENT_SECRET' // Replace with your actual client secret
+    //   })
+    // });
 
-    // TODO store the access token securely and associate it with the user's session
-    // For demonstration purposes, we'll just return it in the response
-    return new Response(`OAuth successful. Token: ${tokenData.access_token}`);
+    // const tokenData = await tokenResponse.json();
+
+    // if (!tokenResponse.ok) {
+    //   throw new Error(tokenData.error_description || 'Error obtaining access token');
+    // }
+    // return new Response(`OAuth successful. Token: ${tokenData.access_token}`, { headers: headers });
+    // #endregion
+
   } catch (error) {
-    return new Response(`OAuth error: ${error.message}`, { status: 500 });
+    return new Response(error.message, { status: 501, headers: headers },);
   }
 });
 
 router.post('/mfp-activity', async request => {
-  const activityData = await request.json(); // Process activity data here
-  console.log(activityData);
-  return new Response('Activity data received', { status: 200 });
+    const activityData = await request.json();
+    console.log(activityData);
+    return new Response('Activity data received.', { status: 200, headers: headers });
+});
+
+router.options('/mfp-activity', () => {
+  return new Response(null, { headers: preflightHeaders });
 });
 
 router.all('*', () => new Response('Not Found', { status: 404 }));
