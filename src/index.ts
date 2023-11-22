@@ -7,6 +7,7 @@ const router = OpenAPIRouter({
   schema: {
     info: {
       title: pkg.aiPlugin.name,
+      description: pkg.aiPlugin.description,
       version: pkg.version
     }
   }
