@@ -5,12 +5,19 @@
   "author": "Josh Braseth <48360032+jbraseth@users.noreply.github.com>",
   "license": "MIT",
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/jbraseth/macromate.git"
-    },
+    "type": "git",
+    "url": "git+https://github.com/jbraseth/macromate.git"
+  },
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler publish"
+  },
   "dependencies": {
     "@cloudflare/itty-router-openapi": "^1.0.5",
     "chatgpt-plugin": "^0.1.2"
+  },
+  "devDependencies": {
+    "wrangler": "^3.17.0"
   },
   "keywords": [
     "openai",
