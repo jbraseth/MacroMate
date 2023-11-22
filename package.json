@@ -27,7 +27,6 @@
     "myfitnesspal",
     "AI meal planner"
   ],
-  "homepage": "https://chat.openai.com/g/g-e8BEXHZXb-macromate",
   "aiPlugin": {
     "name": "MacroMate Nutrition Tracker",
     "description": "A plugin that allows users to track and plan their meals using ChatGPT powered with the MyFitnessPal API",

@@ -14,3 +14,9 @@ The MacroMate ChatGPT Plugin integrates with the MyFitnessPal API to enable Chat
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Experimental GPT
+
+Link to GPT for ChatGPT+ subscribers: [MacroMate](https://chat.openai.com/g/g-e8BEXHZXb-macromate)
+
+It appears that as of the time of writing, 11/21/23, GPT's cannot have access to Plugins, so this GPT will not receive any of the Plugin's functionality.
