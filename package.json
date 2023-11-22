@@ -1,0 +1,36 @@
+{
+  "name": "macromate-chatgpt-plugin",
+  "version": "0.0.1",
+  "description": "Helping people track and plan their meals with the power of the MyFitnessPal API. Automated Macros, Personalized Plans",
+  "author": "Josh Braseth <48360032+jbraseth@users.noreply.github.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbraseth/macromate.git"
+  },
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@cloudflare/itty-router-openapi": "^1.0.5",
+    "chatgpt-plugin": "^0.1.2"
+  },
+  "devDependencies": {
+    "wrangler": "^3.17.0"
+  },
+  "keywords": [
+    "openai",
+    "chatgpt",
+    "plugin",
+    "openapi",
+    "myfitnesspal",
+    "AI meal planner"
+  ],
+  "homepage": "https://chat.openai.com/g/g-e8BEXHZXb-macromate",
+  "aiPlugin": {
+    "name": "MacroMate Nutrition Tracker",
+    "description": "A plugin that allows users to track and plan their meals using ChatGPT powered with the MyFitnessPal API",
+    "description_for_model": "MacroMate facilitates seamless integration with the MyFitnessPal API, enabling users to track and plan meals directly through ChatGPT interactions. It specializes in handling user queries about nutritional information and meal planning, relaying requests to MyFitnessPal for data retrieval and response formulation. The plugin is designed to process and interpret dietary preferences and restrictions, offering personalized meal suggestions and macro calculations. Its primary role is to act as an intermediary between ChatGPT and MyFitnessPal, ensuring accurate and user-specific nutritional advice in a supportive and informative manner."
+  }
+}

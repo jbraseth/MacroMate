@@ -1,0 +1,6 @@
+name = "macromate-chatgpt-plugin"
+main = "src/index.ts"
+compatibility_date = "2023-11-21"
+
+[vars]
+MFP_API_BASE_URL = "https://api.myfitnesspal.com/v2/"
