@@ -1,6 +1,24 @@
 {
+  "name": "macromate-chatgpt-plugin",
+  "version": "0.0.1",
+  "description": "Helping people track and plan their meals with the power of the MyFitnessPal database and API. Automated Macros, Personalized Plans",
+  "author": "Josh Braseth <48360032+jbraseth@users.noreply.github.com>",
+  "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/jbraseth/macromate.git"
+    },
   "dependencies": {
     "@cloudflare/itty-router-openapi": "^1.0.5",
     "chatgpt-plugin": "^0.1.2"
-  }
+  },
+  "keywords": [
+    "openai",
+    "chatgpt",
+    "plugin",
+    "openapi",
+    "myfitnesspal",
+    "AI meal planner"
+  ],
+  "homepage": "https://chat.openai.com/g/g-e8BEXHZXb-macromate"
 }
